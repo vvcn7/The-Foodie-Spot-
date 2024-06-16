@@ -1,0 +1,341 @@
+<html>
+    <head>
+        <title>Restaurant Food Menu</title>
+        
+        <style type="text/css">
+              
+
+            .btns{
+                padding: 5px 5px;
+                display: inline-block;
+                text-transform : uppercase;
+                text-decoration: none;
+                font-size: 1em;
+                overflow: hidden;
+                border-radius: 10px;
+            }
+        
+            .btns:hover {
+                color: #111;
+                background:#FF9933;
+                box-shadow: 0 0 50px #FF9933;
+            }
+        .neonText {
+            animation: flicker 1.5s infinite alternate;
+            color: #fff;
+        }
+        @keyframes flicker {
+        
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow:
+    0 0 4px #fff,
+    0 0 11px #fff,
+    0 0 19px #fff,
+    0 0 40px #0fa,
+    0 0 80px #0fa,
+    0 0 90px #0fa,
+    0 0 100px #0fa,
+    0 0 150px #0fa;
+    }
+    20%, 24%, 55% {        
+    text-shadow: none;
+    }    
+    }
+        .neon-button {
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 25px;
+            box-shadow: 0 0 20px #FF9933;
+    
+         }
+         
+         th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            background-color: lightyellow;
+         }
+    
+         th{
+            background-color: rgb(207, 76, 135);
+            color: black;
+          }
+          body{
+              background-image: url(https://cdn.wallpapersafari.com/89/88/M2wx07.jpg);
+              background-repeat: repeat-y;
+            background-size: auto;
+          }
+        .tag {
+           font-size: 2.0rem;
+           animation: pulsate 0.11s ease-in-out infinite alternate;     
+        }
+        @keyframes pulsate {
+        
+      100% {
+    
+          text-shadow:
+          0 0 4px #fff,
+          0 0 11px #fff,
+          0 0 19px #fff,
+          0 0 40px #f09,
+          0 0 80px #f09,
+          0 0 90px #f09,
+          0 0 100px #f09,
+          0 0 150px #f09;}
+      0% {
+    
+        text-shadow:
+        0 0 4px #fff,
+        0 0 10px #fff,
+        0 0 18px #fff,
+        0 0 38px #f09,
+        0 0 73px #f09,
+        0 0 80px #f09,
+        0 0 94px #f09,
+        0 0 140px #f09;
+      }}
+    
+    
+    </style>
+    <script>
+    function getSelectedRows() {
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        var prices = [];
+        var dishes = [];
+      
+        checkboxes.forEach(function(checkbox) {
+          prices.push(parseFloat(checkbox.getAttribute('price')));
+          dishes.push(checkbox.getAttribute('dish'));
+        });
+      
+        if (prices.length > 0) {
+          var totalPrice = prices.reduce(function(a, b) {
+            return a + b;
+          });
+          alert("Items selected: \n" + dishes.join('\n'));
+          alert("The total price is:\n " + totalPrice.toFixed(2));
+         
+        } else {
+          alert("No items selected.");
+        }
+      }
+    </script>
+    </head>
+    </head>
+    <body align="center">
+        <h1 class="neonText">THE FOODIE SPOT</h1>
+        <h2 class="neonText">MENU CARD</h2>
+        <h2 class="tag">VEG ITEMS</h2>
+        <table class="neon-button" align="center" cellspacing="3" cellpadding="5" border="3" height="300" width="500" >
+            <tr>
+                <th>View</th>
+                <th>Dishes</th>
+                <th>Price</th>
+                <th>Select</th>
+            </tr>
+            <tr>
+                <td><img src="panner.jpg" height="50" width="100"/></td>
+                <td>Paneer manchuria</td>
+                <td>90.0</td>
+                <td><input type="checkbox"  dish="Paneer manchuria" price="90.0" id="select13"></td>
+                
+            </tr>
+            <tr>
+                <td><img src="gobi.jpg" height="50" width="100"/></td>
+                <td>Gobi manchuria</td>
+                <td>80.0</td>
+                <td><input type="checkbox" dish="gobi manchuria" price="80.0" id="select14"></td>
+            </tr>
+            <tr>
+                <td><img src="veg.jpg" height="50" width="100"/></td>
+                <td>Veg manchuria</td>
+                <td>120.0</td>
+                <td><input type="checkbox" dish="Veg manchuriaeg manchuria"  price="120.0" id="select15"></td>
+            </tr>
+            <tr>
+                <td><img src="aloo.jpg" height="50" width="100"/></td>
+                <td>Aloo matar</td>
+                <td>150.0</td>
+                <td><input type="checkbox" dish="Aloo matar" price="150.0" id="select16"></td>
+            </tr>
+            <tr>
+                <td><img src="vegpulao.jpg" height="50" width="100"/></td>
+                <td>Veg pulav</td>
+                <td>160.0</td>
+                <td><input type="checkbox" dish="Veg pulav" price="160.0" id="select17"></td>
+            </tr>
+            <tr>
+                <td><img src="kadai.jpg" height="50" width="100"/></td>
+                <td>Kadai paneer</td>
+                <td>140.0</td>
+                <td><input type="checkbox" dish="Kadai paneer" price="140.0" id="select18"></td>
+            </tr>
+            <tr>
+                <td><img src="mushroom.jpg" height="50" width="100"/></td>
+                <td>Mushroom masala</td>
+                <td>150.0</td>
+                <td><input type="checkbox" dish="Mushroom masala" price="150.0" id="select19"></td>
+            </tr>
+            <tr>
+                <td><img src="vegkadai.jpg" height="50" width="100"/></td>
+                <td>Veg kadai</td>
+                <td>170.0</td>
+                <td><input type="checkbox" dish="Veg kadai" price="170.0" id="select20"></td>
+            </tr>
+            <tr>
+                <td><img src="crispycorn.jpg" height="50" width="100"/></td>
+                <td>Baby corn crispy</td>
+                <td>130.0</td>
+                <td><input type="checkbox" dish="Baby corn crispy" price="130.0" id="select21"></td>
+            </tr>
+            <tr>
+                <td><img src="mushroom1.jpg" height="50" width="100"/></td>
+                <td>Mushroom tikka</td>
+                <td>110.0</td>
+                <td><input type="checkbox" dish="Mushroom tikka" price="110.0" id="select22"></td>
+            </tr>
+        </table>
+        <h2 class="tag">NON-VEG ITEMS</h2>
+        <form>
+        <table class="neon-button" align="center" cellspacing="3" cellpadding="5" border="3" height="300" width="500">
+            <tr>
+                <th>View</th>
+                <th>Dishes</th>
+                <th>Price</th>
+                <th>Select</th>
+            </tr>
+            <tr>
+                <td><img src="kabab.jpg" height="50" width="100"/></td>
+                <td>chicken kabab</td>
+                <td>150.0</td>
+                <td><input type="checkbox" price="150.0" dish="chicken kabab" id="select1"></td>
+            </tr>
+            <tr>
+                <td><img src="mandi.jpg" height="50" width="100"/></td>
+                <td>chicken mandi</td>
+                <td>200.0</td>
+                <td><input type="checkbox" price="200.0" dish="chicken mandi" id="select2"></td>
+            </tr>
+            <tr>
+                <td><img src="mutton.jpg" height="50" width="100"/></td>
+                <td>mutton mandi</td>
+                <td>270.0</td>
+                <td><input type="checkbox" price="270.0" dish="mutton mandi" id="select3"></td>
+            </tr>
+            <tr>
+                <td><img src="fried.jpg" height="50" width="100"/></td>
+                <td>fried chicken</td>
+                <td>210.0</td>
+                <td><input type="checkbox" price="210.0"  dish="fried chicken" id="select4"></td>
+            </tr>
+            <tr>
+                <td><img src="roll.png" height="50" dish="chicken roll" width="100"/></td>
+                <td>chicken roll</td>
+                <td>70.0</td>
+                <td><input type="checkbox" price="70.0" dish="chicken shawarma" id="select5"></td>
+            </tr>
+            <tr>
+                <td><img src="shawarma.jpg" height="50"  width="100"/></td>
+                <td>chicken shawarma</td>
+                <td>130.0</td>
+                <td><input type="checkbox" price="130.0" dish="chicken butter masala" id="select6"></td>
+            </tr>
+            <tr>
+                <td><img src="butter.jpg" height="50" width="100"/></td>
+                <td>chicken butter masala</td>
+                <td>200.0</td>
+                <td><input type="checkbox" price="200.0" dish="chicken dum biriyani" id="select7"></td>
+            </tr>
+            <tr>
+                <td><img src="biryani1.jpg" height="50" width="100"/></td>
+                <td>chicken dum biriyani</td>
+                <td>190.0</td>
+                <td><input type="checkbox" price="190.0"  dish="mutton kabab" id="select8"></td>
+            </tr>
+            <tr>
+                <td><img src="kebab.jpg" height="50" width="100"/></td>
+                <td>mutton kebab</td>
+                <td>170.0</td>
+                <td><input type="checkbox" price="170.0" dish="afgani chicken" id="select9"></td>
+            </tr>
+            <tr><td><img src="afghani.jpg" height="50" width="100"/></td>
+                <td>afghani chicken</td>
+                <td>180.0</td>
+                <td><input type="checkbox" price="180.0" dish="afgani chicken" id="select10"></td>
+            </tr>
+            <tr>
+                <td><img src="boneless1.jpg" height="50" width="100"/></td>
+                <td>kadai chicken boneless</td>
+                <td>150.0</td>
+                <td><input type="checkbox" price="150.0" dush="kadai chicken boneless" id="select11"></td>
+            </tr>
+            <tr>
+                <td><img src="nuggets.jpg" height="50" width="100"/></td>
+                <td>chicken nuggets</td>
+                <td>160.0</td>
+                <td><input type="checkbox" price="160.0" dish="chicken nuggets" id="select12"></td>
+            </tr>
+        </table>
+        
+        <h2 class="tag">SEA FOOD</h2>
+        <table class="neon-button" align="center" cellspacing="3" cellpadding="5" border="3" height="300" width="500">
+            <tr>
+                <th>View</th>
+                <th>Dishes</th>
+                <th>Price</th>
+                <th>Select</th>
+            </tr>
+            <tr>
+                <td><img src="fish.jpg" height="50" width="100"/></td>
+                <td>fish masala</td>
+                <td>200.0</td>
+                <td><input type="checkbox" dish="fish masala"  price="200.0" id="select23"></td>
+    
+            </tr>
+            <tr>
+                <td><img src="prawns1.jpg" height="50" width="100"/></td>
+                <td>prawns fry</td>
+                <td>220.0</td>
+                <td><input type="checkbox" dish="prawns fry" price="220.0" id="select24"></td>
+            </tr>
+            <tr>
+                <td><img src="salmon.jpg" height="50" width="100"/></td>
+                <td>smoked salmon</td>
+                <td>270.0</td>
+                <td><input type="checkbox" price="270.0" dish="smoked salmon" id="select25"></td>
+            </tr>
+            <tr>
+                <td><img src="squid1.jpg" height="50" width="100"/></td>
+                <td>salt and pepper squid</td>
+                <td>300.0</td>
+                <td><input type="checkbox" price="300.0" dish="salt and pepper squid" id="select26"></td>
+            </tr>
+            <tr>
+                <td><img src="crab.jpg" height="50" width="100"/></td>
+                <td>crab bisque</td>
+                <td>350.0</td>
+                <td><input type="checkbox" price="350.0" dish="crab bisque" id="select27"></td>
+            </tr>
+            <tr>
+                <td><img src="crawn.jpg" height="50" width="100"/></td>
+                <td>crawn fish</td>
+                <td>400.0</td>
+                <td><input type="checkbox" price="400.0" dish="crawn fish" id="select28"></td>
+            </tr>
+            <tr>
+                <td><img src="gheeroast.jpg" height="50" width="100"/></td>
+                <td>prawns ghee roast</td>
+                <td>300.0</td>
+                <td><input type="checkbox" price="300.0"  dish="prwans ghee roast" id="select29"></td>
+            </tr>
+        </table><br/><br/>
+        <div id="custom-alert-container">
+        <button class="btns" onclick="getSelectedRows()"> Place Order</button> </div>
+    </form>
+   
+    </body>
+</html>
